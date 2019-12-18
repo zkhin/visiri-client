@@ -38,7 +38,7 @@ export default class Upload extends Component {
 				this.props.onFinish()
 				return res
 			})
-			.catch(err=>this.setState({error:err}))
+      .catch(err => this.setState({ error: err }))
     }
 	}
 
@@ -53,7 +53,7 @@ export default class Upload extends Component {
         image: img,
         scale: 1,
       }, () => {
-          this.handleImageSend(img)
+          // this.handleImageSend(img)
       })
     }
     img.src = this.context.image.src
@@ -63,13 +63,12 @@ export default class Upload extends Component {
       ExperimentApiService.postExperimentImage(this.context.id, image, this.state.image.width, this.state.image.height).then(res => {
         console.log(res)
       })
-        .catch(err => console.log(err))
+        .catch(err => this.setState({ error: err }))
 
 	}
   handleImport = (e) => {
     let reader = new FileReader()
     let image = e.target.files[0]
-    console.log(image)
     reader.onload = (event) => {
       let img = new Image()
       img.onload = () => {
@@ -382,7 +381,7 @@ export default class Upload extends Component {
     })
     box1.draw()
     box2.draw()
-    layer.batchDraw()
+    // layer.batchDraw()
     box1.tween.play()
     box2.tween.play()
 

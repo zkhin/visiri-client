@@ -9,7 +9,9 @@ import ExperimentsPage from '../../routes/ExperimentsPage'
 import './App.css'
 
 class App extends Component {
-  state = { hasError: false }
+  state = {
+    hasError: false,
+  }
 
   static getDerivedStateFromError(error) {
     console.error(error)
@@ -20,11 +22,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        {window.location.pathname === '/' ? null :
           <header className="App__header">
-            <Navbar />
+            <Route path={'/'} component={Navbar} />
           </header>
-        }
 
         <main className="App__main">
           <Switch>

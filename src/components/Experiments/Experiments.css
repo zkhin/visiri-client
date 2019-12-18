@@ -1,4 +1,7 @@
-
+h3.message {
+  text-align: center;
+  color: white;
+}
 
 .experiment {
   display: flex;
@@ -85,10 +88,22 @@
 }
 
 form.createxp {
+  display: flex;
   margin-top: 0;
+  /* width: 400px; */
+  align-items: left;
+  max-width: 400px;
+  justify-content: space-between;
   /* width: fit-content; */
-  justify-content: flex-start;
-  min-width: 433px;
+  /* justify-content: flex-start; */
+  /* min-width: 433px; */
+  /* flex-basis: content; */
+  flex-direction: column;
+  /* flex-shrink: 2; */
+}
+
+.createxp input {
+
 }
 
 
@@ -118,7 +133,6 @@ form.createxp {
   color: rgb(16, 102, 151);
   font-weight: bold;
 }
-
 
 .experiment .scrollbar::-webkit-scrollbar {
   /* height: 170px; */

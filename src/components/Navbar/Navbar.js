@@ -35,21 +35,26 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <div className="container">
-        <nav className="nav">
+      <nav className="nav">
+        {(this.props.location.pathname === '/')? null:
+          <>
           <h1>
+
             <Link className="logo" to={
               TokenService.hasAuthToken() ? "/experiments" : "/"}
             >
               visiri
             </Link>
-          </h1>
-          {TokenService.hasAuthToken()
-            ? this.renderLogoutLink()
-            : this.renderLoginLink()
+            </h1>
+            {TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()
+            }
+          </>
           }
+
+
         </nav>
-      </div>
     )
   }
 }

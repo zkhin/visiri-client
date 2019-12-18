@@ -24,7 +24,6 @@ export default class RegionsList extends React.Component {
 	async componentDidMount() {
 		if (!this.state.regions) {
 			let regions = await this.fetchExperimentRegions(this.state.experimentId)
-			console.log(regions)
 			this.setState({
 				regions: regions,
 				readFromProps: false,

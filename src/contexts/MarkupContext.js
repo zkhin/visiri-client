@@ -5,8 +5,7 @@ const MarkupContext = React.createContext()
 export default MarkupContext
 
 const defaultImage = document.createElement('img')
-let random = Math.ceil(Math.random()*2)
-defaultImage.src = (random === 1? '/default.jpeg': '/default2.jpeg')
+defaultImage.src = '/default2.jpeg'
 
 export class MarkupContextProvider extends Component {
   state = {

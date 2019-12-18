@@ -92,18 +92,33 @@ export default class Experiments extends Component {
         <button className="menu button" onClick={()=>this.setState({ creating: !this.state.creating })}>Create New Calibration Data</button>
         {this.state.creating &&
           <form id="createxp" onSubmit={this.handleSubmit} className="createxp menu">
-            <label>Cell Type:
-              <input name="celltype" type="text"></input>
+            <label htmlFor="celltype">Cell Type:
             </label>
-            <label>Experiment Type:
-              <input name="experiment_type" type="text" placeholder="Calibration"></input>
+              <input id="celltype"
+                name="celltype"
+                type="text"
+                >
+              </input>
+            <label htmlFor="experiment_type">Experiment Type:
             </label>
+              <input id="experiment_type"
+                name="experiment_type"
+                type="text"
+                defaultValue="Calibration"
+                placeholder="Calibration">
+              </input>
             <button className="menu" type="submit">Submit</button>
           </form>
         }
-        {this.state.experiments
+        {(this.state.experimentsLoaded && this.state.experiments.length)
           ? this.renderExperiments()
-          : "You have not created any experiments"
+          :
+          <h3 className="message">
+            {"You have not created any experiments"}
+          </h3>
+
+
+
         }
     </>
     )

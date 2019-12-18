@@ -32,12 +32,13 @@ nav .logo {
   /* padding: 1em, 1em; */
 }
 
-.top {
+
+.authmenu.top {
   /* right: 5px; */
   top: .5em;
 }
 
-.bottom {
+.authmenu.bottom {
   /* right: 5px; */
   top: 2em;
 }
