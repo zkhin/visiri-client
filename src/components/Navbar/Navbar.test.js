@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './Navbar';
+import Route from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { MarkupContextProvider } from '../../contexts/MarkupContext'
 
@@ -9,7 +10,7 @@ it('renders without crashing', () => {
   ReactDOM.render(
     <BrowserRouter>
       <MarkupContextProvider>
-        <Navbar />
+        <Navbar location={'/'}/>
       </MarkupContextProvider>
     </BrowserRouter>,
     div
