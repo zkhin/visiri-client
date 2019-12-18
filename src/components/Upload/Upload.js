@@ -171,7 +171,7 @@ export default class Upload extends Component {
         const deltaYBounded = !(wheelEvent.deltaY % 1) ?
           Math.abs(Math.min(-10, Math.max(10, wheelEvent.deltaY))) :
           Math.abs(wheelEvent.deltaY)
-        const scaleBy = .10 + deltaYBounded / 90
+        const scaleBy = .10 + deltaYBounded / 99
         const newScale = wheelEvent.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy
         stage.scale({ x: newScale, y: newScale })
 
