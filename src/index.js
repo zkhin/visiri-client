@@ -6,15 +6,15 @@ import App from './components/App/App'
 import './index.css'
 
 
-window.addEventListener(
-  "touchmove",
-  function (event) {
-    if (event.scale !== 1) {
-      event.preventDefault();
-    }
-  },
-  { passive: false }
-);
+// window.addEventListener(
+//   "touchmove",
+//   function (event) {
+//     if (event.scale !== 1) {
+//       event.preventDefault();
+//     }
+//   },
+//   { passive: false }
+// );
 ReactDOM.render(
   <BrowserRouter>
     <MarkupContextProvider>
