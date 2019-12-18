@@ -95,6 +95,7 @@ export default class Experiments extends Component {
             <label htmlFor="celltype">Cell Type:
             </label>
               <input id="celltype"
+              autoFocus={false}
                 name="celltype"
                 type="text"
                 >
@@ -103,6 +104,7 @@ export default class Experiments extends Component {
             </label>
               <input id="experiment_type"
                 name="experiment_type"
+                autoFocus={false}
                 type="text"
                 defaultValue="Calibration"
                 placeholder="Calibration">

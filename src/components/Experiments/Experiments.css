@@ -18,20 +18,25 @@ h3.message {
   /* padding-top: 8px; */
   /* padding-bottom: 1em; */
   background-color: #DEEEFF;
-  width: 318px;
+  max-width: 318px;
   font-size: .8em;
   font-family: "AvenirNextLTPro-Regular";
 }
 
 .experiment .regionslist {
-  padding-left: 10px;
+  border-color: lightblue;
+  background-color: rgb(221, 243, 255);
+  /* padding-left: 10px; */
+  align-items: center;
+  /* justify-content: space-around; */
   margin: 0;
   border-radius: 1px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   /* align-self: flex-end; */
   width: 20%;
-  /* z-index: 1; */
+  z-index: 9;
   overflow-x: hidden;
   overflow-y: scroll;
   max-height: 170px;
@@ -45,16 +50,18 @@ h3.message {
     min-height: 450px;
 }
 
-.experiment .cellbutton {
+.experiment .regionslist .cellbutton {
   /* margin-left: auto;
   margin-right: auto; */
-  width: 25px;
-  height: 25px;
+  min-width: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  max-height: 32px;
 }
 
 .experiment .cellbutton .tooltiptext {
   font-size: .8em;
-  z-index: 2;
+  z-index: 9;
 }
 
 .review {
@@ -102,10 +109,6 @@ form.createxp {
   /* flex-shrink: 2; */
 }
 
-.createxp input {
-
-}
-
 
 .expinfo {
   margin: 0;
@@ -124,6 +127,7 @@ form.createxp {
   font-family: Inconsolata;
   /* padding: .2em; */
   justify-content: left;
+  z-index: 0;
   /* align-items: left; */
 }
 
@@ -137,7 +141,7 @@ form.createxp {
 .experiment .scrollbar::-webkit-scrollbar {
   /* height: 170px; */
   padding: none;
-overflow-y: scroll;
+  overflow-y: scroll;
   height: 400px;
     width: 10px;
     /* background-color: #333; */
