@@ -6,12 +6,10 @@ h1 {
   text-align: center;
 }
 ul {
-  list-style: none;
   display: flex;
-  align-items: flex-start;
-  justify-content: stretch;
+  list-style: none;
   padding: 1em;
-
+  justify-content: space-evenly;
 }
 a {
   /* text-decoration-style: none; */
@@ -29,6 +27,20 @@ a.demo {
   font-size: .8em;
   text-align: center;
   color: #f2f2f2ce;
+}
+
+.intro ul {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ /* align-items: center; */
+}
+
+.intro li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* flex-basis: 100px; */
 }
 
 .splash {
