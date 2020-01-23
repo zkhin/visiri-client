@@ -12,15 +12,17 @@ Sign up Page
 
 ## About project
 
-Spaced Repetition is an application that users can learn 10 basic Spanish words and can take a practice word anytime when they are ready for it.
-Users able to check their answer is correct or incorrect directly on the learning page.
-Also, Spaced Repetition will display how many times they got correct or incorrect answers for each word and total score on the dashboard page.
-I hope many users use our Spaced Repetition to improve their Spanish word knowledge skills.
+Visiri is an application that allows users to upload cell microscopy images and create datasets that will allow deep learning
+models to automatically count cells.
+Users can create calibrations that combine imaging factors particular to a laboratory and upload the data to the server.
+The application provides a mobile friendly interface for labelling the image with cell markers.
+Using this labelled data, the application will be able to train a convolutional neural network to classify image regions and 
+in the future, function as an automated cell counter.
 
-- Live Page: [Live](https://spacedrepetition.now.sh/)
-- Heroku: [Heroku](https://polar-coast-57735.herokuapp.com/)
-- API Server Code: [Server](https://github.com/thinkful-ei-heron/spaced-repetition-api-heesu-wesley-zayar)
-- Client Code:[Client](https://github.com/thinkful-ei-heron/spaced-repetition-client-heesu-wesley-zayar)
+- Live Page: [Live](https://visiri.now.sh/)
+- Server API endpoint: [Heroku](https://infinite-brushlands-69470.herokuapp.com/api/)
+- API Server Code: [Server](https://github.com/zkhin/visiri-server)
+- Client Code:[Client](https://github.com/zkhin/visiri-client)
 
 -----------------------
 
