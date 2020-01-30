@@ -145,7 +145,7 @@ input.file {
   width: 80vw; */
 }
 
-.tooltip .errortext {
+.upload .tooltip .errortext {
 	visibility: hidden;
 	width: fit-content;
 	background-color: #f9f9f9;
@@ -160,7 +160,22 @@ input.file {
 	z-index: 1;
 }
 
-.tooltip:hover .errortext {
+.upload .tooltip .tiptext {
+  width: fit-content;
+  touch-action: none;
+	background-color: #f9f9f98c;
+	color: #176bd1;
+	text-align: center;
+  padding: 5px 5px;
+	border-radius: 8px;
+	position: absolute;
+	top:-200%;
+	left: 50%;
+  margin-left: -100%;
+	z-index: 1;
+}
+
+.upload .tooltip:hover .errortext {
   visibility: visible;
   border: 1px solid red;
 }

@@ -15,10 +15,17 @@ export default class RegionsList extends React.Component {
 		regions: this.props.regions,
 		experimentId: this.props.experimentId,
 		onClick: this.props.onClick,
+		clicked: false,
 		regionsLoaded: false,
 		readFromProps: null,
 		readFromState: null,
 		readFromContext: null,
+	}
+
+	handleClick = (e, cb = this.props.onClick) => {
+		e.preventDefault()
+		this.setState({clicked: true})
+		cb(e)
 	}
 
 	async componentDidMount() {
@@ -52,7 +59,7 @@ export default class RegionsList extends React.Component {
 			<button
 				key={i + 1}
 				id={`button-${i+1}`}
-				onClick={onClick}
+				onClick={(e)=>{this.handleClick(e, onClick)}}
 				className="cellbutton tooltip"
 				style={{
 					boxShadow: `0 0 5px ${region.color}`,

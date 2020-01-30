@@ -22,6 +22,7 @@ export default class Upload extends Component {
 		debug: false,
     markedLocation: { x: null, y: null },
     touching: false,
+    regionsTouched: false,
   }
   containerRef = React.createRef()
   stageRef = React.createRef()
@@ -148,6 +149,7 @@ export default class Upload extends Component {
       ...this.state,
       position: newPosition,
       scale: scale,
+      regionsTouched: true,
     }, () => stage.tween.play())
   }
 
@@ -435,7 +437,15 @@ export default class Upload extends Component {
             </Stage>
 
           </div>
-          <button className="menu" onClick={this.createCellRegion}>Mark Cell</button>
+          <button className="menu tooltip" onClick={this.createCellRegion}>
+            Mark Cell
+              {this.context.regions.regions.data.length === 0 &&
+                this.state.uploaded &&
+                <span className="tiptext">
+                  Tip: You can also double-click/tap the stage to mark a cell.
+                </span>
+              }
+          </button>
 
           {this.state.debug &&
             <button className="menu" onClick={() => { this.setState({ debug: !this.state.debug }) }}>Debug</button>
@@ -451,6 +461,12 @@ export default class Upload extends Component {
                 Finish Calibration
                 {typeof this.state.error == 'string' &&
                 <span className="errortext">{this.state.error}</span>
+                }
+                {this.context.regions.regions.data.length > 0 &&
+                  !this.state.regionsTouched &&
+                  <span className="tiptext">
+                    Tip: Click on circles to review a marked area.
+                  </span>
                 }
               </button>
             </>
