@@ -57,7 +57,7 @@ export default class Upload extends Component {
           // this.handleImageSend(img)
       })
     }
-    img.src = this.context.image.src
+    img.src = this.context.defaultImageSrc
   }
 
 	handleImageSend = (image) => {
