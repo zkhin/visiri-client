@@ -1,77 +1,70 @@
-import React, { Component } from 'react'
-import { NiceDate } from '../Utils/Utils'
-import MarkupContext from '../../contexts/MarkupContext'
-import ExperimentApiService from '../../services/experiment-api-service'
-import './Experiments.css'
-import RegionsList from '../RegionsList/RegionsList'
-import ExperimentImages from './ExperimentImages'
+import React, { Component } from "react";
+import { NiceDate } from "../Utils/Utils";
+import MarkupContext from "../../contexts/MarkupContext";
+import ExperimentApiService from "../../services/experiment-api-service";
+import "./Experiments.css";
+import RegionsList from "../RegionsList/RegionsList";
+import ExperimentImages from "./ExperimentImages";
 
 export default class Experiments extends Component {
-  static contextType = MarkupContext
+  static contextType = MarkupContext;
   // static defaultProps = {
-  //   onCreateSuccess: () => {},
-  // }
+  //   onCreateSuccess: () => {}
+  // };
   state = {
     experiments: null,
     images: null,
     regions: null,
     creating: false,
-    experimentsLoaded: false,
-  }
+    experimentsLoaded: false
+  };
 
-  handleSubmit = (e) => {
-    e.preventDefault()
+  handleSubmit = e => {
+    e.preventDefault();
     let newExperiment = {
       experiment_type: e.target.experiment_type.value,
-      celltype: e.target.celltype.value,
-    }
-    ExperimentApiService.postExperiment(newExperiment).then(res => {
-      this.context.setExperiment(res.id, res.celltype, res.experiment_type)
-    }).then(() => this.props.onCreateSuccess())
-  }
+      celltype: e.target.celltype.value
+    };
+    ExperimentApiService.postExperiment(newExperiment)
+      .then(res => {
+        this.context.setExperiment(res.id, res.celltype, res.experiment_type);
+      })
+      .then(() => this.props.onCreateSuccess());
+  };
 
   async fetchExperiments() {
-    let experiments = await ExperimentApiService.getExperiments()
+    let experiments = await ExperimentApiService.getExperiments();
     this.setState({
       experiments: experiments,
-      experimentsLoaded: true,
-    })
+      experimentsLoaded: true
+    });
   }
 
   componentDidMount() {
-    this.fetchExperiments()
+    this.fetchExperiments();
   }
 
   renderExperiments() {
     return (
       <>
         {this.state.experimentsLoaded &&
-          this.state.experiments.map((experiment, i) =>
+          this.state.experiments.map((experiment, i) => (
             <div key={experiment.id} className="experiment">
-               <div className="review">
-
-                  <ExperimentImages experimentId={experiment.id} />
+              <div className="review">
+                <ExperimentImages experimentId={experiment.id} />
                 <content className="expinfo">
-                  <p>
-                    {experiment.celltype}
-                  </p>
-                  <p>
-                    {experiment.experiment_type}
-                  </p>
+                  <p>{experiment.celltype}</p>
+                  <p>{experiment.experiment_type}</p>
                   <p>
                     {NiceDate({ date: Date.parse(experiment.date_created) })}
                   </p>
                 </content>
-
-
-                </div>
-              <RegionsList experimentId={experiment.id} />
-
               </div>
-          )
-        }
+              <RegionsList experimentId={experiment.id} />
+            </div>
+          ))}
       </>
-    )
+    );
   }
 
   renderRegions(i) {
@@ -81,48 +74,52 @@ export default class Experiments extends Component {
           regions={this.state.regions[i][0].regions.data}
           onClick={this.displayRegion}
         />
-      )
+      );
     }
   }
-
 
   render() {
     return (
       <>
-        <button className="menu button" onClick={()=>this.setState({ creating: !this.state.creating })}>Create New Calibration Data</button>
-        {this.state.creating &&
-          <form id="createxp" onSubmit={this.handleSubmit} className="createxp menu">
-            <label htmlFor="celltype">Cell Type:
-            </label>
-              <input id="celltype"
+        <button
+          className="menu button"
+          onClick={() => this.setState({ creating: !this.state.creating })}
+        >
+          Create New Calibration Data
+        </button>
+        {this.state.creating && (
+          <form
+            id="createxp"
+            onSubmit={this.handleSubmit}
+            className="createxp menu"
+          >
+            <label htmlFor="celltype">Cell Type:</label>
+            <input
+              id="celltype"
               autoFocus={false}
-                name="celltype"
-                type="text"
-                >
-              </input>
-            <label htmlFor="experiment_type">Experiment Type:
-            </label>
-              <input id="experiment_type"
-                name="experiment_type"
-                autoFocus={false}
-                type="text"
-                defaultValue="Calibration"
-                placeholder="Calibration">
-              </input>
-            <button className="menu" type="submit">Submit</button>
+              name="celltype"
+              type="text"
+            ></input>
+            <label htmlFor="experiment_type">Experiment Type:</label>
+            <input
+              id="experiment_type"
+              name="experiment_type"
+              autoFocus={false}
+              type="text"
+              defaultValue="Calibration"
+              placeholder="Calibration"
+            ></input>
+            <button className="menu" type="submit">
+              Submit
+            </button>
           </form>
-        }
-        {(this.state.experimentsLoaded && this.state.experiments.length)
-          ? this.renderExperiments()
-          :
-          <h3 className="message">
-            {"You have not created any experiments"}
-          </h3>
-
-
-
-        }
-    </>
-    )
+        )}
+        {this.state.experimentsLoaded && this.state.experiments.length ? (
+          this.renderExperiments()
+        ) : (
+          <h3 className="message">{"You have not created any experiments"}</h3>
+        )}
+      </>
+    );
   }
 }

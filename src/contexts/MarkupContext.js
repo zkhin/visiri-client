@@ -1,20 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-const MarkupContext = React.createContext()
+const MarkupContext = React.createContext();
 
-export default MarkupContext
+export default MarkupContext;
 
-const defaultImage = document.createElement('img')
-defaultImage.src = '/default2.jpeg'
+const defaultImage = document.createElement("img");
+defaultImage.src = "/default2.jpeg";
+
+const fallbackImage = document.createElement("img");
+fallbackImage.src = "/no-image-found.jpg";
 
 export class MarkupContextProvider extends Component {
   state = {
+    fallbackImageSrc: fallbackImage.src,
+    defaultImageSrc: defaultImage.src,
     image: {
       src: defaultImage.src,
       width: null,
       height: null,
       magnification: null,
-      demo: false,
+      demo: false
     },
     setImageSrc: this.setImageSrc,
     id: null,
@@ -26,27 +31,27 @@ export class MarkupContextProvider extends Component {
       id: null,
       experiment_id: null,
       regions: {
-        data: [],
+        data: []
       }
     },
     selectedRegionId: null,
     selectRegion: this.selectRegion,
     regionSize: 56,
-    setExperiment: this.setExperiment,
-  }
+    setExperiment: this.setExperiment
+  };
 
-  getRegionById = (regionId) => {
-    return this.state.regions.find(region => region.id === regionId)
-  }
+  getRegionById = regionId => {
+    return this.state.regions.find(region => region.id === regionId);
+  };
 
-  deleteRegionById = (id) => {
-    let toRemove = this.getRegionById(id)
+  deleteRegionById = id => {
+    let toRemove = this.getRegionById(id);
     this.setState({
       regions: this.state.regions.filter(region => region !== toRemove)
-    })
-  }
+    });
+  };
 
-  selectRegion = (selectedRegionId) => this.setState({selectedRegionId})
+  selectRegion = selectedRegionId => this.setState({ selectedRegionId });
 
   setImage = (src, width, height) => {
     this.setState({
@@ -55,12 +60,12 @@ export class MarkupContextProvider extends Component {
         width,
         height
       }
-    })
-  }
+    });
+  };
 
-  setExperiment = (id, celltype, experiment_type='Calibration') => {
+  setExperiment = (id, celltype, experiment_type = "Calibration") => {
     this.setState({
-			...this.state,
+      ...this.state,
       id: id,
       celltype,
       experiment_type,
@@ -70,31 +75,31 @@ export class MarkupContextProvider extends Component {
           data: []
         }
       }
-    })
-  }
+    });
+  };
 
-  setRegionSize = (diam) => {
-
+  setRegionSize = diam => {
     this.setState({
       regionSize: diam
-    })
-  }
+    });
+  };
 
-  setRegions = (newData) => {
+  setRegions = newData => {
     this.setState({
-			...this.state,
+      ...this.state,
       regions: {
-				...this.state.regions,
+        ...this.state.regions,
         regions: {
-          data: newData,
+          data: newData
         }
       }
-    })
-  }
-
+    });
+  };
 
   render() {
     const value = {
+      fallbackImageSrc: this.state.fallbackImageSrc,
+      defaultImageSrc: this.state.defaultImageSrc,
       image: this.state.image,
       setImage: this.setImage,
       setExperiment: this.setExperiment,
@@ -108,12 +113,12 @@ export class MarkupContextProvider extends Component {
       selectRegion: this.selectRegion,
       regionSize: this.state.regionSize,
       setRegionSize: this.setRegionSize,
-      setRegions: this.setRegions,
-    }
+      setRegions: this.setRegions
+    };
     return (
       <MarkupContext.Provider value={value}>
         {this.props.children}
       </MarkupContext.Provider>
-    )
+    );
   }
 }
