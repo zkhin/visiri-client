@@ -6,13 +6,18 @@ const MarkupContext = React.createContext();
 
 export default MarkupContext;
 
+const defaultImage = document.createElement("img");
+defaultImage.src = `${API_ENDPOINT}/images/default2.jpeg`;
+
+const fallbackImage = document.createElement("img");
+fallbackImage.src = `${API_ENDPOINT}/images/no-image-found.jpg`;
 
 export class MarkupContextProvider extends Component {
   state = {
-    fallbackImageSrc: `${API_ENDPOINT}/images/no-image-found.jpg`,
-    defaultImageSrc: `${API_ENDPOINT}/images/default2.jpeg`,
+    fallbackImageSrc: fallbackImage.src,
+    defaultImageSrc: defaultImage.src,
     image: {
-      src: `${API_ENDPOINT}/images/default2.jpeg`,
+      src: defaultImage.src,
       width: null,
       height: null,
       magnification: null,
