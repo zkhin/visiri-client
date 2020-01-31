@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-const {API_ENDPOINT} = require('../config')
+import config from '../config'
 
 const MarkupContext = React.createContext();
 
 export default MarkupContext;
 
 const defaultImage = document.createElement("img");
-defaultImage.src = `${API_ENDPOINT}/images/default2.jpeg`;
+defaultImage.src = `${config.API_ENDPOINT}/images/default2.jpeg`;
 
 const fallbackImage = document.createElement("img");
-fallbackImage.src = `${API_ENDPOINT}/images/no-image-found.jpg`;
+fallbackImage.src = `${config.API_ENDPOINT}/images/no-image-found.jpg`;
 
 export class MarkupContextProvider extends Component {
   state = {
