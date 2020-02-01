@@ -51,14 +51,22 @@ Password: password
 
 ## Screenshots
 
-Experiments Page
+### Experiments Page
 
 ![Dashboard Page](./screenshots/visiri-dashboard.jpg)
 
-Upload/Markup Page
+### Upload/Markup Page
 
 ![Markup Page](./screenshots/visiri-labelling.jpg)
 
+#### How-to:
+
+- Upload an image
+- Use mouse or touch to position the red square on top of cells
+- Scale the image with mouse-wheel or pinch to fit cell
+- Click 'Mark Cell' or doubleclick/tap
+- Click on colored circles to re-center previously marked areas
+- Click 'Finish Calibration'
 ---
 
 Copyright © 2020 Zayar Khin / Visiri

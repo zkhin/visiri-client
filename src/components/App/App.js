@@ -28,10 +28,10 @@ class App extends Component {
         <main className="App__main">
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
-            <Route exact path={'/register'} component={RegistrationPage} />
-            <Route exact path={'/login'} component={LoginPage} />
-            <Route exact path={'/experiments'} component={ExperimentsPage} />
-            <Route exact path={'/upload'} component={UploadPage} />
+            <Route path={'/register'} component={RegistrationPage} />
+            <Route path={'/login'} component={LoginPage} />
+            <Route path={'/experiments'} component={ExperimentsPage} />
+            <Route path={'/upload'} component={UploadPage} />
           </Switch>
         </main>
       </div>
