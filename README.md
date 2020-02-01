@@ -1,6 +1,10 @@
 # Visiri - Automated Cell Counter and Image Markup Tool
 
 ![Splash](./screenshots/visiri-splash.jpg)
+- Live Page: [Live](https://visiri.now.sh/)
+- Server API endpoint: [Heroku](https://infinite-brushlands-69470.herokuapp.com/api/)
+- API Server Code: [Server](https://github.com/zkhin/visiri-server)
+- Client Code:[Client](https://github.com/zkhin/visiri-client)
 ___
 
 ## About project
@@ -15,10 +19,10 @@ This project is actively being developed in stages with the first being the fron
 In this current build, users can upload images of their cells and label the cells in a mobile-friendly browser-based interface.
 
 The next build will establish the convolutional neural network models and deploying GPU-based architecture for training/prediction and task scheduling.
-
+___
 ## Technologies Used
 
-Client Side deployed on Zeit
+Client deployed on Zeit
 
 - React
 - JavaScript
@@ -26,19 +30,12 @@ Client Side deployed on Zeit
 - HTML
 - CSS
 
-API Server Side deployed on Heroku
+API Server deployed on Heroku
 
 - Express
 - Node
 - PostgreSQL
 - JWT Auth
-
----
-
-- Live Page: [Live](https://visiri.now.sh/)
-- Server API endpoint: [Heroku](https://infinite-brushlands-69470.herokuapp.com/api/)
-- API Server Code: [Server](https://github.com/zkhin/visiri-server)
-- Client Code:[Client](https://github.com/zkhin/visiri-client)
 
 ---
 
