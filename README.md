@@ -16,7 +16,7 @@ Using a mobile device camera linked to the eyepiece of a microscope, a neural ne
 
 This project is actively being developed in stages with the first being the frontend and data storage architectures for generating these calibration datasets.
 
-In this current build, users can upload images of their cells and label the cells in a mobile-friendly browser-based interface.
+In this current build, users can upload images of their cells and label the cells in a mobile-friendly browser-based interface. Intuitive manipulation of image zoom and panning is important to workflow and Visiri supports touch events such as pinch zooming and dragging as well as desktop mouse/wheel events.
 
 The next build will establish the convolutional neural network models and deploying GPU-based architecture for training/prediction and task scheduling.
 ___
