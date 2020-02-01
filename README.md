@@ -7,7 +7,7 @@
 - Client Code:[Client](https://github.com/zkhin/visiri-client)
 ___
 
-## About project
+## About Project
 
 Visiri is an application that allows users to upload cell microscopy images and create datasets that will allow deep learning
 models to automatically count cells.
