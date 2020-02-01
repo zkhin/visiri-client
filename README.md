@@ -3,8 +3,8 @@
 ![Splash](./screenshots/visiri-splash.jpg)
 - Live Page: [Live](https://visiri.now.sh/)
 - Server API endpoint: [Heroku](https://infinite-brushlands-69470.herokuapp.com/api/)
-- API Server Code: [Server](https://github.com/zkhin/visiri-server)
-- Client Code: [Client](https://github.com/zkhin/visiri-client)
+- API Server Repository: [Server](https://github.com/zkhin/visiri-server)
+- Client Repository: [Client](https://github.com/zkhin/visiri-client)
 ___
 
 ## About Project
