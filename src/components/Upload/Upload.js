@@ -90,7 +90,7 @@ export default class Upload extends Component {
             scale: 1
           },
           () => {
-            if (this.context.id){
+            if (this.context.id) {
               this.handleImageSend(image);
             }
           }
