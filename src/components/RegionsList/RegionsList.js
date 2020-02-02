@@ -65,7 +65,7 @@ export default class RegionsList extends React.Component {
         className="cellbutton tooltip"
         style={{
           boxShadow: `0 0 5px ${region.color}`,
-          border: `3px solid ${region.color}`
+          borderColor: `${region.color}`
         }}
       >
         {i + 1}
@@ -78,7 +78,13 @@ export default class RegionsList extends React.Component {
 
   render() {
     return (
-      <div className="regionslist scrollbar">
+      <div
+        className="regionslist scrollbar"
+        style={{
+          flexDirection: this.state.readFromProps ? "row" : "column",
+          flexWrap: this.state.readFromProps ? "wrap" : null
+        }}
+      >
         {this.state.regionsLoaded &&
           this.state.readFromProps &&
           this.props.regions.length > 0 &&

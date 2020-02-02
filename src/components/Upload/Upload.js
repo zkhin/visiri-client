@@ -65,6 +65,7 @@ export default class Upload extends Component {
       );
     };
     img.src = this.context.defaultImageSrc;
+    this.props.setHowTo(false);
   };
 
   handleImageSend = image => {
@@ -100,6 +101,7 @@ export default class Upload extends Component {
     };
     try {
       reader.readAsDataURL(e.target.files[0]);
+      this.props.setHowTo(false);
     } catch {
       this.setState({ error: "No image provided" });
       return;
@@ -425,13 +427,9 @@ export default class Upload extends Component {
       <>
         {!this.state.image && (
           <>
-            <h2>Upload your image</h2>
-            <h5>
-              Or use{" "}
-              <Link className="sample_link" to="" onClick={this.handleDemo}>
-                Sample Image
-              </Link>
-            </h5>
+            <Link className="sample_link menu" to="" onClick={this.handleDemo}>
+              Sample Image
+            </Link>
           </>
         )}
         <div className="upload">
@@ -510,7 +508,7 @@ export default class Upload extends Component {
                   {typeof this.state.error == "string" && (
                     <span className="errortext">{this.state.error}</span>
                   )}
-                  {this.context.regions.regions.data.length > 0 &&
+                  {this.context.regions.regions.data.length === 2 &&
                     !this.state.regionsTouched && (
                       <span className="tiptext">
                         Tip: Click on circles to review a marked area.

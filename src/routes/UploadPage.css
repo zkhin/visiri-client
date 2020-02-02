@@ -1,0 +1,19 @@
+.UploadPage .howto {
+  padding: 1em;
+  font-size: 0.8em;
+  text-align: left;
+  color: #f2f2f2ce;
+}
+
+.UploadPage .howto ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.UploadPage .howto li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+}
