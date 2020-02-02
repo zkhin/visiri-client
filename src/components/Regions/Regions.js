@@ -1,11 +1,11 @@
-import React from "react"
-import { Layer, Line, Rect as CellRegion } from "react-konva"
-import './Regions.css'
-import MarkupContext from '../../contexts/MarkupContext'
+import React from "react";
+import { Layer, Line, Rect as CellRegion } from "react-konva";
+import "./Regions.css";
+import MarkupContext from "../../contexts/MarkupContext";
 
 export default class Regions extends React.Component {
-  static contextType = MarkupContext
-  layerRef = React.useRef()
+  static contextType = MarkupContext;
+  layerRef = React.useRef();
 
   render() {
     return (
@@ -30,13 +30,13 @@ export default class Regions extends React.Component {
                 width={region.regionSize || this.context.regionSize}
                 height={region.regionSize || this.context.regionSize}
                 onClick={() => {
-                  this.context.selectRegion(region.id)
+                  this.context.selectRegion(region.id);
                 }}
               />
             </React.Fragment>
-          )
+          );
         })}
       </Layer>
-    )
+    );
   }
 }

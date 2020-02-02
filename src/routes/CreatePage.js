@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Markup from '../components/Create/Markup'
+import React, { Component } from "react";
+import Markup from "../components/Create/Markup";
 
 export default class LandingPage extends Component {
   render() {
@@ -7,6 +7,6 @@ export default class LandingPage extends Component {
       <div>
         <Markup />
       </div>
-    )
+    );
   }
 }

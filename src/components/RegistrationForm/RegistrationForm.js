@@ -10,8 +10,8 @@ export default class RegistrationForm extends Component {
 
   state = {
     error: null,
-    success: null,
-   };
+    success: null
+  };
 
   handleSubmit = ev => {
     ev.preventDefault();
@@ -23,11 +23,11 @@ export default class RegistrationForm extends Component {
       password: password.value
     })
       .then(user => {
-        full_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        this.setState({success: 'You have successfully registered'})
-        this.props.onRegistrationSuccess()
+        full_name.value = "";
+        user_name.value = "";
+        password.value = "";
+        this.setState({ success: "You have successfully registered" });
+        this.props.onRegistrationSuccess();
       })
       .catch(res => {
         this.setState({ error: res.error });
