@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export default class Debug extends Component {
   render() {
-    const stageRef = this.props.stageRef.current;
-    const imageLayerRef = this.props.imageLayerRef.current;
+    const stageRef = this.props.stageRef.current || null;
+    const imageLayerRef = this.props.imageLayerRef.current || null;
     return (
       <div>
         <div className="debug">
