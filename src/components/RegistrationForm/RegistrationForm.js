@@ -27,7 +27,7 @@ export default class RegistrationForm extends Component {
         user_name.value = "";
         password.value = "";
         this.setState({ success: "You have successfully registered" });
-        this.props.onRegistrationSuccess();
+        this.props.onRegistrationSuccess(user);
       })
       .catch(res => {
         this.setState({ error: res.error });
@@ -41,14 +41,12 @@ export default class RegistrationForm extends Component {
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div role="alert">{success && <p className="white">{success}</p>}</div>
         <div className="full_name">
-          <label htmlFor="RegistrationForm__full_name">
-            Full name <Required />
-          </label>
+          <label htmlFor="RegistrationForm__full_name">Full name</label>
           <Input
             name="full_name"
             type="text"
-            required
             id="RegistrationForm__full_name"
+            autocapitalize="none"
           ></Input>
         </div>
         <div className="user_name">
@@ -60,6 +58,7 @@ export default class RegistrationForm extends Component {
             type="text"
             required
             id="RegistrationForm__user_name"
+            autocapitalize="none"
           ></Input>
         </div>
         <div className="password">

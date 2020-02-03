@@ -12,8 +12,18 @@ ul {
 }
 .Landing a {
   display: flex;
+  margin-bottom: 10px;
   justify-content: center;
-  border-radius: 50px;
+  align-items: center;
+  border-radius: 25px;
+}
+.Landing .landing-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 a.demo {
@@ -21,18 +31,17 @@ a.demo {
 }
 
 .Landing .menu {
-  width: auto;
+  width: 100%;
 }
 
 .Landing .about {
   background-color: #f2f2f2;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   padding: 1em;
-  width: 100vw;
-  /* max-width: 600px; */
-  margin-left: auto;
-  margin-right: auto;
+  /* width: 100vw; */
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,20 +69,19 @@ a.demo {
 }
 
 .Landing .splash {
-  width: 100vw;
-  padding: 0;
-  max-width: 600px;
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
 }
 
 .Landing .splash img {
-  width: 100vw;
+  padding: 0 10px;
+  width: 100%;
   max-width: 600px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }

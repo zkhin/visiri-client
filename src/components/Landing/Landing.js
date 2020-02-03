@@ -9,15 +9,17 @@ export default class Landing extends Component {
         <div className="splash">
           <img src="/Completed 2.jpg" alt="Visiri" />
         </div>
-        <Link to="/register" className="menu">
-          Register
-        </Link>
-        <Link to="/login" className="menu">
-          Login
-        </Link>
-        <Link className="menu" to="/upload">
-          Demo
-        </Link>
+        <div className="landing-menu">
+          <Link to="/register" className="menu">
+            Register
+          </Link>
+          <Link to="/login" className="menu">
+            Login
+          </Link>
+          <Link className="menu" to="/upload">
+            Demo
+          </Link>
+        </div>
         <div className="about">
           <h3>About Visiri</h3>
           <p>

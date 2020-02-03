@@ -5,15 +5,14 @@
   color: #f2f2f2ce;
 }
 
-.UploadPage .howto ul {
+.UploadPage .howto {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 
 .UploadPage .howto li {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 0.5em;
+  list-style: outside;
+  margin-left: 2em;
 }
