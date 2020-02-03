@@ -27,7 +27,7 @@ export default class RegistrationForm extends Component {
         user_name.value = "";
         password.value = "";
         this.setState({ success: "You have successfully registered" });
-        this.props.onRegistrationSuccess(user);
+        this.props.onRegistrationSuccess(user.user_name);
       })
       .catch(res => {
         this.setState({ error: res.error });
@@ -46,7 +46,7 @@ export default class RegistrationForm extends Component {
             name="full_name"
             type="text"
             id="RegistrationForm__full_name"
-            autocapitalize="none"
+            autoCapitalize="none"
           ></Input>
         </div>
         <div className="user_name">
@@ -58,7 +58,7 @@ export default class RegistrationForm extends Component {
             type="text"
             required
             id="RegistrationForm__user_name"
-            autocapitalize="none"
+            autoCapitalize="none"
           ></Input>
         </div>
         <div className="password">
@@ -72,7 +72,9 @@ export default class RegistrationForm extends Component {
             id="RegistrationForm__password"
           ></Input>
         </div>
-        <Button type="submit">Register</Button>
+        <Button className="menu" type="submit">
+          Register
+        </Button>
       </form>
     );
   }

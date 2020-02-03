@@ -18,9 +18,15 @@ export default class LoginPage extends Component {
   };
 
   render() {
+    const { user_name } = this.props.match.params;
     return (
       <Section className="LoginPage">
         <h2>Login</h2>
+
+        <LoginForm
+          onLoginSuccess={this.handleLoginSuccess}
+          userName={user_name || null}
+        />
         <div className="demo-tip">
           You may also use the demo account credentials: <br />
           <code>
@@ -28,7 +34,6 @@ export default class LoginPage extends Component {
             password: password
           </code>
         </div>
-        <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </Section>
     );
   }
