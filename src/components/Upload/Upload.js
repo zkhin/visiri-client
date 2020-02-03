@@ -32,7 +32,8 @@ export default class Upload extends Component {
     e.preventDefault();
     if (!this.context.id) {
       this.setState({
-        error: "To submit, you must login and create an experiment first"
+        error:
+          "To save this data, you must be logged in and create an experiment"
       });
     } else {
       ExperimentApiService.postExperimentRegions(

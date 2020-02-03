@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Upload from "../components/Upload/Upload";
 import "./UploadPage.css";
+import TokenService from "../services/token-service";
 
 export default class UploadPage extends Component {
   static defaultProps = {
@@ -22,7 +23,9 @@ export default class UploadPage extends Component {
       <div className="UploadPage">
         {this.state.howto && (
           <ul className="howto">
-            <li>Click 'Login' to use the demo account</li>
+            {!TokenService.hasAuthToken() && (
+              <li>Click 'Login' to use the demo account</li>
+            )}
             <li>Take a picture of the cells you want to count</li>
             <li>
               Mark the image with square boxes containing an individual cell
