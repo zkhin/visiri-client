@@ -14,6 +14,7 @@ nav .logo {
 }
 
 .authmenu {
+  text-align: right;
   display: flex;
   padding: 10px 5px;
   flex-direction: column;
