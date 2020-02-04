@@ -4,7 +4,7 @@
 - Live Page: [Live](https://visiri.now.sh/)
 - Server API endpoint (deployed on Heroku): [Server Status](https://infinite-brushlands-69470.herokuapp.com/api/)
 - API Server Repository: [Server](https://github.com/zkhin/visiri-server)
-- Client Repository: [Client](https://github.com/zkhin/visiri-client)
+
 ___
 
 ## About Project
