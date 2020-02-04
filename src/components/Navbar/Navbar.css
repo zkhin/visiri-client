@@ -14,20 +14,23 @@ nav .logo {
 }
 
 .authmenu {
+  display: flex;
+  padding: 10px 5px;
+  flex-direction: column;
   position: absolute;
   text-decoration: underline;
-  right: 1em;
-  top: 10px;
-  font-size: 0.9em;
+  left: 1em;
+  top: 2rem;
+  font-size: 0.95em;
 }
 
-.authmenu.top {
+/* .authmenu.top {
   top: 0.5em;
 }
 
 .authmenu.bottom {
   top: 2em;
-}
+} */
 
 .container {
   position: relative;

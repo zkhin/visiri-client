@@ -10,19 +10,24 @@ export default class Navbar extends Component {
 
   renderLogoutLink() {
     return (
-      <Link className="authmenu top" onClick={this.handleLogoutClick} to="/">
-        Logout
-      </Link>
+      <div className="authmenu">
+        <Link className="top" onClick={this.handleLogoutClick} to="/">
+          Logout
+        </Link>
+        <Link className="bottom" to="/experiments">
+          Experiments
+        </Link>
+      </div>
     );
   }
 
   renderLoginLink() {
     return (
-      <div>
-        <Link className="authmenu top" to="/login">
+      <div className="authmenu">
+        <Link className="top" to="/login">
           Log in
         </Link>
-        <Link className="authmenu bottom" to="/register">
+        <Link className="bottom" to="/register">
           Register
         </Link>
       </div>
