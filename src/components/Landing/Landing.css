@@ -61,11 +61,13 @@ a.demo {
   align-items: center;
   color: black;
   line-height: 1.5em;
-  z-index: 2;
+  z-index: 0;
 }
 .Landing .about::after {
   content: "";
   position: absolute;
+  touch-action: none;
+  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -73,7 +75,6 @@ a.demo {
   z-index: 1;
   background: rgba(87, 88, 88, 0.04);
   box-shadow: inset 5px 5px 20px #d1d1d183, inset -5px -5px 20px #d5d5d585;
-  z-index: 0;
 }
 
 .Landing .about h3 {
